@@ -1,4 +1,4 @@
-import { data } from './layouts/default';
+import Link from 'next/link';
 
 export default function PostSummaryDetails({ post }) {
 	const date = post.date ? new Date(post.date).toLocaleDateString('en-US', {
@@ -12,7 +12,7 @@ export default function PostSummaryDetails({ post }) {
 			{date}
 
 			{post.tags.map((tag, i) => (
-				<span key={i}> &bull; <a className="post-summary-category" href="/category/{tag}/">{tag}</a></span>
+				<span key={i}> &bull; <Link className="post-summary-category" href={`/category/${tag}`}>{tag}</Link></span>
 			))}
 		</p>
 	);

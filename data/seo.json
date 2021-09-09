@@ -1,9 +1,24 @@
 {
+	"site_name": "Justice",
 	"title": "Justice Template",
 	"description": "Next.js template with example content for a law firm.",
-	"url": "",
-	"author": "",
-	"authorEmail": "",
-	"twitter": "",
-	"image": ""
+	"url": "https://example.com/",
+	"images": [],
+	"_array_structures": {
+		"images": {
+			"style": "select",
+			"values": [
+				{
+					"label": "Image",
+					"icon": "image",
+					"value": {
+						"image": "",
+						"description": "",
+						"height": 0,
+						"width": 0
+					}
+				}
+			]
+		}
+	}
 }

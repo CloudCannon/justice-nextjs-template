@@ -1,45 +1,50 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import companyData from '../../data/company.json';
-import footerData from '../../data/footer.json';
-import seoData from '../../data/seo.json';
-import siteData from '../../data/site';
+import { NextSeo } from 'next-seo';
+import data from '../../lib/data';
 
-export const data = {
-	company: companyData,
-	footer: footerData,
-	seo: seoData,
-	site: siteData
-};
+export default function DefaultLayout({ children, page }) {
+	const title = page.title ? `${page.title} | ${data.seo.title}` : data.seo.title;
+	const description = page.description || data.seo.description;
 
-export default function DefaultLayout({ children, home }) {
 	return (
 		<>
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<title>{seoData.title}</title>
 
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento|Vollkorn:400,400i,700,700i" />
 				<link rel="apple-touch-icon" href="/apple-touch-icon.png"/ >
 				<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192" />
 				<link rel="icon" type="image/png" href="/favicon.png" />
-
-				<meta name="description" content={seoData.description} />
-				<meta name="og:title" content={seoData.title} />
-				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 
-			<header style={{backgroundImage:'url(/uploads/building.jpg)'}} className={home ? 'main-hero' : ''}>
+			<NextSeo
+				title={title}
+				description={description}
+				openGraph={{
+					site_name: data.seo.site_name,
+					url: data.seo.url,
+					title: title,
+					description: description,
+					images: data.seo.images.map((image) => ({
+						url: image.image,
+						width: image.height,
+						height: image.width,
+						alt: image.description
+					}))
+				}}
+			/>
+
+			<header style={{backgroundImage:'url(/uploads/building.jpg)'}} className={page.large_header ? 'main-hero' : ''}>
 				<div className="container">
-					<h1><a href="/">{companyData.title}</a></h1>
+					<h1><Link href="/">{data.company.title}</Link></h1>
 					<nav>
 						<ul>
-							<li><a href="/about">About</a></li>
-							<li><a href="/services">Services</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="/blog">Blog</a></li>
+							<li><Link href="/about">About</Link></li>
+							<li><Link href="/services">Services</Link></li>
+							<li><Link href="/contact">Contact</Link></li>
+							<li><Link href="/blog">Blog</Link></li>
 						</ul>
 					</nav>
 				</div>
@@ -51,8 +56,8 @@ export default function DefaultLayout({ children, home }) {
 
 			<footer>
 				<div className="container">
-					<div className="footer-columns" data-cms-editor-link="cloudcannon:collections/content/data/footer.yml">
-						{footerData.map((column) => (
+					<div className="footer-columns" data-cms-editor-link="cloudcannon:collections/content/data/footer.json">
+						{data.footer.map((column) => (
 							<ul className="footer-links" key={column.title}>
 								<li>
 									<h2>{column.title}</h2>
@@ -60,7 +65,7 @@ export default function DefaultLayout({ children, home }) {
 
 								{column.links.map((link) => (
 									<li key={link.name}>
-										<a
+										<Link
 											target={link.new_window ? '_blank' : '_self'}
 											href={link.link}
 											className={link.social_icon ? `${link.social_icon}-icon` : ''}>
@@ -69,7 +74,7 @@ export default function DefaultLayout({ children, home }) {
 											{% endif %}*/}
 
 											{link.name}
-										</a>
+										</Link>
 									</li>
 								))}
 							</ul>
@@ -77,21 +82,24 @@ export default function DefaultLayout({ children, home }) {
 
 						<ul className="footer-links">
 							<li>
-								<h2>{companyData.title}</h2>
+								<h2>{data.company.title}</h2>
 							</li>
-							<li>{companyData.description}</li>
-							{/*<li><a href="/feed.xml">{% socialIcon 'RSS' | safe %} Subscribe with RSS</a></li>*/}
+							<li>{data.company.description}</li>
+							<li>
+								{/*<Link href="/feed.xml">{% socialIcon 'RSS' | safe %} Subscribe with RSS</Link>*/}
+								<Link href="/feed.xml">Subscribe with RSS</Link>
+							</li>
 						</ul>
 					</div>
 				</div>
 
 				<div className="legal-line">
 					<p className="container">
-						&copy; {new Date().getFullYear()} {companyData.title}
+						&copy; {new Date().getFullYear()} {data.company.title}
 						&bull;
-						<a href="/terms">Terms</a>
+						<Link href="/terms">Terms</Link>
 						&bull;
-						Template by <a href="https://cloudcannon.com/">CloudCannon</a>
+						Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
 					</p>
 				</div>
 			</footer>

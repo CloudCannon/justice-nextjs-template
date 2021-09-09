@@ -1,28 +1,23 @@
-import Head from 'next/head';
-import DefaultLayout from '../components/layouts/default';
+import PageLayout from '../components/layouts/page';
 import { getCollectionSlugs, getCollectionItem } from '../lib/collections';
 
 export default function Page({ page }) {
 	return (
-		<DefaultLayout>
-			<Head>
-				<title>{page.title}</title>
-			</Head>
-
-			<div className="page-header">
-				<h2>{page.title}</h2>
-			</div>
-
-			<article className="content">
-				<div dangerouslySetInnerHTML={{ __html: page.contentHtml }} />
-			</article>
-		</DefaultLayout>
+		<PageLayout page={page} />
 	);
 }
 
 export async function getStaticPaths() {
+	const slugs = await getCollectionSlugs('pages');
+	const ignored = {
+		about: true,
+		blog: true,
+		contact: true,
+		index: true
+	};
+
 	return {
-		paths: await getCollectionSlugs('pages'),
+		paths: slugs.filter(({ params }) => !ignored[params.slug]),
 		fallback: false
 	};
 }

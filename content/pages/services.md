@@ -2,6 +2,7 @@
 title: Services
 call_to_action: Contact
 large_header: false
+_exclude_from_collection_slugs: false
 ---
 Our specialised team has the skill and experience to provide a range of services. The utmost care is taken with all our work. The main streams of work we perform are as follows:
 

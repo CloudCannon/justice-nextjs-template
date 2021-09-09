@@ -1,4 +1,4 @@
-import { data } from './layouts/default';
+import Link from 'next/link';
 import PostSummaryDetails from './post-summary-details';
 
 export default function PostSummary({ post }) {
@@ -10,7 +10,7 @@ export default function PostSummary({ post }) {
 
 			<div className="post-summary-content has-post-summary-image">
 				<h3 className="post-summary-title">
-					<a href={`/blog/${post.slug}`}>{post.title}</a>
+					<Link href={`/blog/${post.slug}`}>{post.title}</Link>
 				</h3>
 
 				<PostSummaryDetails post={post} />

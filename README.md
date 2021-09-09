@@ -26,7 +26,7 @@ Justice was made by [CloudCannon](https://cloudcannon.com/).
 ## Setup
 
 1. Add your site and author details in `data/seo.json`.
-2. Add your Google Analytics and Disqus keys to `data/site.js`.
+2. Add your Google Analytics and Disqus keys to `data/site.json`.
 3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/)
 or Next.js locally).
 

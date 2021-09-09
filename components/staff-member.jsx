@@ -1,4 +1,5 @@
-import { data } from './layouts/default';
+import Link from 'next/link';
+import data from '../lib/data';
 
 export default function StaffMember({ staffMember }) {
 	return (
@@ -15,7 +16,7 @@ export default function StaffMember({ staffMember }) {
 					<li>{staffMember.name}</li>
 					<li><small>{staffMember.credentials}</small></li>
 					<li>
-						<a href={`tel:${data.company.contact_phone_number}`}>{data.company.contact_phone_number}</a> ext {staffMember.phone_extension}
+						<Link href={`tel:${data.company.contact_phone_number}`}>{data.company.contact_phone_number}</Link> ext {staffMember.phone_extension}
 					</li>
 				</ul>
 			</div>
