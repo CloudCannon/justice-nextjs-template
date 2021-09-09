@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import data from '../../lib/data';
+import Icon from '../../components/icon';
 
 export default function DefaultLayout({ children, page }) {
 	const title = page.title ? `${page.title} | ${data.seo.title}` : data.seo.title;
@@ -80,15 +81,10 @@ export default function DefaultLayout({ children, page }) {
 
 								{column.links.map((link) => (
 									<li key={link.name}>
-										<Link
-											target={link.new_window ? '_blank' : '_self'}
-											href={link.link}
-											className={link.social_icon ? `${link.social_icon}-icon` : ''}>
-											{/*{% if link.social_icon %}
-												{% socialIcon link.social_icon | safe %}
-											{% endif %}*/}
-
-											{link.name}
+										<Link href={link.link}>
+											<a target={link.new_window ? '_blank' : '_self'}>
+												{link.social_icon && <Icon icon={link.social_icon} />} {link.name}
+											</a>
 										</Link>
 									</li>
 								))}
@@ -101,8 +97,7 @@ export default function DefaultLayout({ children, page }) {
 							</li>
 							<li>{data.company.description}</li>
 							<li>
-								{/*<Link href="/feed.xml">{% socialIcon 'RSS' | safe %} Subscribe with RSS</Link>*/}
-								<Link href="/feed.xml">Subscribe with RSS</Link>
+								<Link href="/feed.xml"><a><Icon icon="RSS" /> Subscribe with RSS</a></Link>
 							</li>
 						</ul>
 					</div>
