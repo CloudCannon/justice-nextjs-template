@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev -p 3333",
     "lint": "next lint",
-    "build": "next build",
-    "postbuild": "next-sitemap",
+    "prebuild": "next-sitemap",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
