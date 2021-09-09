@@ -40,10 +40,26 @@ export default function DefaultLayout({ children, page }) {
 					<h1><Link href="/">{data.company.title}</Link></h1>
 					<nav>
 						<ul>
-							<li><Link href="/about">About</Link></li>
-							<li><Link href="/services">Services</Link></li>
-							<li><Link href="/contact">Contact</Link></li>
-							<li><Link href="/blog">Blog</Link></li>
+							<li>
+								<Link href="/about">
+									<a className={page.slug === 'about' ? 'active' : ''}>About</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/services">
+									<a className={page.slug === 'services' ? 'active' : ''}>Services</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/contact">
+									<a className={page.slug === 'contact' ? 'active' : ''}>Contact</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/blog">
+									<a className={page.slug === 'blog' ? 'active' : ''}>Blog</a>
+								</Link>
+							</li>
 						</ul>
 					</nav>
 				</div>
