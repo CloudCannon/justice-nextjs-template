@@ -1,6 +1,8 @@
+import { writeFile } from 'fs/promises';
 import PageLayout from '../../components/layouts/page';
 import PostSummary from '../../components/post-summary';
 import { getCollection, getCollectionItem } from '../../lib/collections';
+import { generateRss } from '../../lib/rss';
 
 export default function Blog({ page, posts }) {
 	return (
@@ -21,6 +23,8 @@ export async function getStaticProps({ params }) {
 		const author = await getCollectionItem('staff-members', post.author_staff_member);
 		return { ...post, author }
 	}));
+
+	await writeFile('./public/feed.xml', generateRss(postsWithAuthor));
 
 	return {
 		props: {

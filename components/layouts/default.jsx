@@ -24,7 +24,7 @@ export default function DefaultLayout({ children, page }) {
 				description={description}
 				openGraph={{
 					site_name: data.seo.site_name,
-					url: data.seo.url,
+					url: data.site.url,
 					title: title,
 					description: description,
 					images: data.seo.images.map((image) => ({

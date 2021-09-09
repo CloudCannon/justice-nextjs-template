@@ -2,7 +2,8 @@
 	"site_name": "Justice",
 	"title": "Justice Template",
 	"description": "Next.js template with example content for a law firm.",
-	"url": "https://example.com/",
+	"author": "",
+	"author_email": "",
 	"images": [],
 	"_array_structures": {
 		"images": {
