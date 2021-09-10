@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@cloudcannon/react-connector": "^1.0.3",
     "disqus-react": "^1.1.2",
     "gray-matter": "^4.0.2",
     "markdown-it": "^12.2.0",
