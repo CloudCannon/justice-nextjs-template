@@ -32,9 +32,10 @@ module.exports = {
 	},
 
 	'collections-config': {
-		pages: {
+		webpages: {
 			path: 'content/pages',
-			url: '/[slug]'
+			url: '/[slug]',
+			name: 'Pages'
 		},
 		posts: {
 			path: 'content/posts',
