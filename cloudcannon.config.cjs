@@ -35,11 +35,13 @@ module.exports = {
 		webpages: {
 			path: 'content/pages',
 			url: '/[slug]',
+			output: true,
 			name: 'Pages'
 		},
 		posts: {
 			path: 'content/posts',
 			url: '/blog/[slug]',
+			output: true,
 			name: 'Blog'
 		}
 	}
