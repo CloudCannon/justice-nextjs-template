@@ -40,7 +40,8 @@ module.exports = {
 			path: 'content/pages',
 			url: '/[slug]',
 			output: true,
-			name: 'Pages'
+			name: 'Pages',
+			_icon: 'wysiwyg'
 		},
 		posts: {
 			path: 'content/posts',
@@ -50,7 +51,8 @@ module.exports = {
 		},
 		staff_members: {
 			path: 'content/staff-members',
-			output: false
+			output: false,
+			_icon: 'people'
 		},
 		data: {
 			path: 'data',
