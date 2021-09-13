@@ -46,8 +46,7 @@ module.exports = {
 		posts: {
 			path: 'content/posts',
 			url: '/blog/[slug]',
-			output: true,
-			name: 'Blog'
+			output: true
 		},
 		staff_members: {
 			path: 'content/staff-members',
