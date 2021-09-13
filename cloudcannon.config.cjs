@@ -11,24 +11,28 @@ module.exports = {
 		new_window: 'Whether the link opens a new browser tab/window.'
 	},
 
+	_select_data: {
+		call_to_actions: [
+			'Contact',
+			'Blog'
+		],
+		social_icons: [
+			'Facebook',
+			'Instagram',
+			'LinkedIn',
+			'Pinterest',
+			'Tumblr',
+			'Twitter',
+			'YouTube',
+			'RSS'
+		]
+	},
+
 	paths: {
 		collections: 'content',
 		data: 'data',
 		static: 'public',
 		uploads: 'public/uploads'
-	},
-
-	'data-config': {
-		company: {
-			path: 'data/company.json'
-		},
-		footer: {
-			path: 'data/footer.json'
-		},
-		seo: {
-			path: 'data/seo.json',
-			name: 'SEO'
-		}
 	},
 
 	'collections-config': {
@@ -43,6 +47,14 @@ module.exports = {
 			url: '/blog/[slug]',
 			output: true,
 			name: 'Blog'
+		},
+		staff_members: {
+			path: 'content/staff-members',
+			output: false
+		},
+		data: {
+			path: 'data',
+			output: false
 		}
 	}
 };
