@@ -12,7 +12,6 @@ testimonials:
   - message: Justice Law were everything we could have hoped for when buying our first home. Highly recommended to all.
     testimonial_image: "https://placebear.com/60/60?a=.png"
     name: D. and G. Gibbleston
-_exclude_from_collection_slugs: true
 ---
 This is the *Justice* template from [CloudCannon](https://cloudcannon.com/). Justice is strong foundation for the web presence of a law firm or business. It's filled with fictitious example content to get you started.
 

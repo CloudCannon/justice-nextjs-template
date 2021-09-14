@@ -2,7 +2,6 @@
 title: Terms
 call_to_action: Contact
 large_header: false
-_exclude_from_collection_slugs: false
 ---
 This is usually where the fine print would go, but here's part of the Wikipedia entry on dogs instead:
 

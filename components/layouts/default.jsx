@@ -70,6 +70,22 @@ export default function DefaultLayout({ children, page }) {
 				<div className="container">{children}</div>
 			</section>
 
+			{page.call_to_action === 'Contact' && (
+				<section className="quote-section">
+					<p className="container">
+						<Link href="/contact">Contact us</Link> today to find out how we can help you. Your first consultation is free.
+					</p>
+				</section>
+			)}
+
+			{page.call_to_action === 'Blog' && (
+				<section className="quote-section">
+					<p className="container">
+						<Link href="/blog">Read our blog</Link> for an introduction and quick tips on various areas of the law.
+					</p>
+				</section>
+			)}
+
 			<footer>
 				<div className="container">
 					<div className="footer-columns" data-cms-editor-link="cloudcannon:collections/content/data/footer.json">
@@ -105,11 +121,7 @@ export default function DefaultLayout({ children, page }) {
 
 				<div className="legal-line">
 					<p className="container">
-						&copy; {new Date().getFullYear()} {data.company.title}
-						&bull;
-						<Link href="/terms">Terms</Link>
-						&bull;
-						Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
+						&copy; {new Date().getFullYear()} {data.company.title} &bull; <Link href="/terms">Terms</Link> &bull; Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
 					</p>
 				</div>
 			</footer>

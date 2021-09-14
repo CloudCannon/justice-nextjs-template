@@ -2,7 +2,6 @@
 title: About
 call_to_action: Contact
 large_header: false
-_exclude_from_collection_slugs: true
 ---
 Serving your community for over a century, Justice Law is committed to helping people through a number of services.
 Our services range from conveyancing, mortgages to family law. Our clients range from large businesses to first home buyers.
