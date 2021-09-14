@@ -5,7 +5,7 @@ import data from '../../lib/data';
 import Icon from '../../components/icon';
 
 export default function DefaultLayout({ children, page }) {
-	const title = page.title ? `${page.title} | ${data.seo.title}` : data.seo.title;
+	const title = page.title ? `${page.title} | ${data.seo.site_title}` : data.seo.site_title;
 	const description = page.description || data.seo.description;
 
 	return (
@@ -38,7 +38,7 @@ export default function DefaultLayout({ children, page }) {
 
 			<header style={{backgroundImage:'url(/uploads/building.jpg)'}} className={page.large_header ? 'main-hero' : ''}>
 				<div className="container">
-					<h1><Link href="/">{data.company.title}</Link></h1>
+					<h1><Link href="/">{data.company.company_name}</Link></h1>
 					<nav>
 						<ul>
 							<li>
@@ -109,7 +109,7 @@ export default function DefaultLayout({ children, page }) {
 
 						<ul className="footer-links">
 							<li>
-								<h2>{data.company.title}</h2>
+								<h2>{data.company.company_name}</h2>
 							</li>
 							<li>{data.company.description}</li>
 							<li>
@@ -121,7 +121,7 @@ export default function DefaultLayout({ children, page }) {
 
 				<div className="legal-line">
 					<p className="container">
-						&copy; {new Date().getFullYear()} {data.company.title} &bull; <Link href="/terms">Terms</Link> &bull; Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
+						&copy; {new Date().getFullYear()} {data.company.company_name} &bull; <Link href="/terms">Terms</Link> &bull; Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
 					</p>
 				</div>
 			</footer>

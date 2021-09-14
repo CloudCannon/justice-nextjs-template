@@ -41,12 +41,14 @@ module.exports = {
 			url: '/[slug]',
 			output: true,
 			name: 'Pages',
-			_icon: 'wysiwyg'
+			_icon: 'wysiwyg',
+			_enabled_editors: ['visual', 'content', 'data']
 		},
 		posts: {
 			path: 'content/posts',
 			url: '/blog/[slug]',
-			output: true
+			output: true,
+			_enabled_editors: ['content', 'data']
 		},
 		staff_members: {
 			path: 'content/staff-members',
