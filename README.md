@@ -1,7 +1,7 @@
 # Justice
 
 Law firm themed business template for Next.js. Browse through a
-[live demo](https://grey-grouse.cloudvent.net/). Increase the web presence of a law firm or
+[live demo](https://mysterious-shelter.cloudvent.net/). Increase the web presence of a law firm or
 business with this configurable theme.
 
 ![Justice template screenshot](_screenshot.png)
