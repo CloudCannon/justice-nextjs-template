@@ -42,7 +42,7 @@ module.exports = {
 			output: true,
 			name: 'Pages',
 			_icon: 'wysiwyg',
-			_enabled_editors: ['visual', 'content', 'data']
+			_enabled_editors: ['visual', 'data']
 		},
 		posts: {
 			path: 'content/posts',

@@ -8,7 +8,7 @@ export default function PageLayout({ children, page }) {
 			</div>
 
 			<article className="content">
-				<div dangerouslySetInnerHTML={{ __html: page.contentHtml }} />
+				<div dangerouslySetInnerHTML={{ __html: page.content_html }} />
 
 				{children}
 			</article>

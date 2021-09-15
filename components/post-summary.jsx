@@ -24,7 +24,7 @@ export default function PostSummary({ post }) {
 				</p>
 			</div>
 
-			<p className="post-summary-excerpt" dangerouslySetInnerHTML={{ __html: post.excerptHtml }} />
+			<p className="post-summary-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt_html }} />
 		</li>
 	);
 }

@@ -21,7 +21,7 @@ export default function StaffMember({ staffMember }) {
 				</ul>
 			</div>
 
-			<div className="staff-bio" dangerouslySetInnerHTML={{ __html: staffMember.contentHtml }}></div>
+			<div className="staff-bio" dangerouslySetInnerHTML={{ __html: staffMember.content_html }}></div>
 		</li>
 	);
 }
