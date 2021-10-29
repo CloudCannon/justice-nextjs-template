@@ -8,6 +8,8 @@ business with this configurable theme.
 
 Justice was made by [CloudCannon](https://cloudcannon.com/).
 
+[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/justice-nextjs-template)
+
 ## Features
 
 * Contact form
