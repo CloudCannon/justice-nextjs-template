@@ -11,7 +11,7 @@ export default function Contact({ page }) {
 
 					<label>Phone Number</label>
 					<p className="contact-info">
-						<a href={`tel:${data.company.contact_phone_number}`}>{data.company.contact_phone_number}</a>
+						<a href={`tel:${data.company.phone}`}>{data.company.phone}</a>
 					</p>
 
 					<label>Email Address</label>

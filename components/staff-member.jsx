@@ -16,7 +16,7 @@ export default function StaffMember({ staffMember }) {
 					<li>{staffMember.name}</li>
 					<li><small>{staffMember.credentials}</small></li>
 					<li>
-						<Link href={`tel:${data.company.contact_phone_number}`}>{data.company.contact_phone_number}</Link> ext {staffMember.phone_extension}
+						<Link href={`tel:${data.company.phone}`}>{data.company.phone}</Link> ext {staffMember.phone_extension}
 					</li>
 				</ul>
 			</div>
