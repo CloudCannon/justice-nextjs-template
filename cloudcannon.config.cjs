@@ -59,7 +59,7 @@ module.exports = {
 			url: '/[slug]',
 			output: true,
 			name: 'Pages',
-			_icon: 'wysiwyg',
+			icon: 'wysiwyg',
 			_enabled_editors: ['visual', 'data']
 		},
 		posts: {
@@ -96,7 +96,7 @@ module.exports = {
 		staff_members: {
 			path: 'content/staff-members',
 			output: false,
-			_icon: 'people'
+			icon: 'people'
 		},
 		data: {
 			path: 'data',
