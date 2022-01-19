@@ -83,6 +83,11 @@ module.exports = {
 			  },
 			  {
 				key: 'date',
+				label: 'Newest first',
+				order: 'descending'
+			  },
+			  {
+				key: 'date',
 				label: 'Oldest first',
 				order: 'asc'
 			  }
