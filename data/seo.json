@@ -5,7 +5,7 @@
 	"author": "",
 	"author_email": "",
 	"images": [],
-	"_array_structures": {
+	"_structures": {
 		"images": {
 			"style": "select",
 			"values": [

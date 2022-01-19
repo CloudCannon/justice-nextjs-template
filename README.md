@@ -34,7 +34,7 @@ or Next.js locally).
 
 ## Develop
 
-Justice is built with [Next.js](https://nextjs.org/) (version `11.0.0`).
+Justice is built with [Next.js](https://nextjs.org/) (version `12.0.8`).
 
 ~~~bash
 $ npm install
