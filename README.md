@@ -15,7 +15,7 @@ Justice was made by [CloudCannon](https://cloudcannon.com/).
 * Contact form
 * Pre-built pages
 * Pre-styled components
-* Blog with pagination
+* Blog
 * Post category pages
 * Disqus comments for posts
 * Staff and author system
@@ -27,8 +27,8 @@ Justice was made by [CloudCannon](https://cloudcannon.com/).
 
 ## Setup
 
-1. Add your site and author details in `data/seo.json`.
-2. Add your Google Analytics and Disqus keys to `data/site.json`.
+1. Add your site and author details in `content/data/seo.json`.
+2. Add your Google Analytics and Disqus keys to `content/data/site.json`.
 3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/)
 or Next.js locally).
 
@@ -50,7 +50,7 @@ and footer elements in [CloudCannon](https://app.cloudcannon.com/).
 
 * Add, update or remove a post in the *Posts* collection.
 * The **Staff Author** field links to members in the **Staff** collection.
-* Change the defaults when new posts are created in `_posts/_defaults.md`.
+* Change the defaults when new posts are created in `content/posts/_defaults.md`.
 
 ### Contact Form
 

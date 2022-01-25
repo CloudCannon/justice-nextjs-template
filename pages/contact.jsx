@@ -7,7 +7,7 @@ export default function Contact({ page }) {
 		<PageLayout page={page}>
 			<div className="columns">
 				<div className="column">
-					<p className="editor-link"><a href="cloudcannon:collections/content/data/company.yml" className="btn"><strong>&#9998;</strong> Update Company Details</a></p>
+					<p className="editor-link"><a href="cloudcannon:collections/content/data/company.json" className="btn"><strong>&#9998;</strong> Update Company Details</a></p>
 
 					<label>Phone Number</label>
 					<p className="contact-info">
