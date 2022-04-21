@@ -67,6 +67,11 @@ module.exports = {
 			url: '/blog/[slug]',
 			output: true,
 			_enabled_editors: ['content', 'data'],
+			schemas: {
+				default: {
+					path: "schemas/post.md"
+				}
+			},
 			sort: {
 			  key: 'date',
 			  order: 'desc'
@@ -96,7 +101,13 @@ module.exports = {
 		staff_members: {
 			path: 'content/staff-members',
 			output: false,
-			icon: 'people'
+			icon: 'people',
+			schemas: {
+				default: {
+					path: "schemas/staff-member.md"
+				}
+			},
+			_enabled_editors: ['content']
 		},
 		data: {
 			path: 'data',

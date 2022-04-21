@@ -41,7 +41,6 @@ export default function Contact({ page }) {
 						<label htmlFor="message">Message</label>
 						<textarea id="message" name="message"></textarea>
 
-						<input type="hidden" name="_to" value={data.company.contact_email_address} />
 						<input type="text" name="_gotcha" style={{display: 'none'}} />
 
 						<input type="submit" value="Send Message" />

@@ -50,7 +50,7 @@ and footer elements in [CloudCannon](https://app.cloudcannon.com/).
 
 * Add, update or remove a post in the *Posts* collection.
 * The **Staff Author** field links to members in the **Staff** collection.
-* Change the defaults when new posts are created in `_posts/_defaults.md`.
+* Change the defaults when new posts are created in `schemas/posts.md`.
 
 ### Contact Form
 
