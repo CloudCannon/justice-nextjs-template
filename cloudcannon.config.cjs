@@ -42,18 +42,36 @@ module.exports = {
 			output: true,
 			name: 'Pages',
 			_icon: 'wysiwyg',
-			_enabled_editors: ['visual', 'data']
+			_enabled_editors: ['visual', 'data'],
+			schemas: {
+				default: {
+				  path: 'schemas/page.md'
+				}
+			  }
+		
 		},
 		posts: {
 			path: 'content/posts',
 			url: '/blog/[slug]',
 			output: true,
-			_enabled_editors: ['content', 'data']
+			_enabled_editors: ['content', 'data'],
+			schemas: {
+				default: {
+				  path: 'schemas/post.md'
+				}
+			  }
+		
 		},
 		staff_members: {
 			path: 'content/staff-members',
 			output: false,
-			_icon: 'people'
+			_icon: 'people',
+			schemas: {
+				default: {
+				  path: 'schemas/staff-member.md'
+				}
+			  }
+		
 		},
 		data: {
 			path: 'data',
