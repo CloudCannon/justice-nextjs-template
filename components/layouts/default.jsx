@@ -42,23 +42,23 @@ export default function DefaultLayout({ children, page }) {
 					<nav>
 						<ul>
 							<li>
-								<Link href="/about">
-									<a className={page.slug === 'about' ? 'active' : ''}>About</a>
+								<Link href="/about" className={page.slug === 'about' ? 'active' : ''}>
+									About
 								</Link>
 							</li>
 							<li>
-								<Link href="/services">
-									<a className={page.slug === 'services' ? 'active' : ''}>Services</a>
+								<Link href="/services" className={page.slug === 'services' ? 'active' : ''}>
+									Services
 								</Link>
 							</li>
 							<li>
-								<Link href="/contact">
-									<a className={page.slug === 'contact' ? 'active' : ''}>Contact</a>
+								<Link href="/contact" className={page.slug === 'contact' ? 'active' : ''}>
+									Contact
 								</Link>
 							</li>
 							<li>
-								<Link href="/blog">
-									<a className={page.slug === 'blog' ? 'active' : ''}>Blog</a>
+								<Link href="/blog" className={page.slug === 'blog' ? 'active' : ''}>
+									Blog
 								</Link>
 							</li>
 						</ul>
@@ -97,10 +97,8 @@ export default function DefaultLayout({ children, page }) {
 
 								{column.links.map((link) => (
 									<li key={link.name}>
-										<Link href={link.link}>
-											<a target={link.new_window ? '_blank' : '_self'}>
-												{link.social_icon && <Icon icon={link.social_icon} />} {link.name}
-											</a>
+										<Link href={link.link} target={link.new_window ? '_blank' : '_self'}>
+											{link.social_icon && <Icon icon={link.social_icon} />} {link.name}
 										</Link>
 									</li>
 								))}
@@ -113,7 +111,7 @@ export default function DefaultLayout({ children, page }) {
 							</li>
 							<li>{data.company.description}</li>
 							<li>
-								<Link href="/feed.xml"><a><Icon icon="RSS" /> Subscribe with RSS</a></Link>
+								<Link href="/feed.xml"><Icon icon="RSS" /> Subscribe with RSS</Link>
 							</li>
 						</ul>
 					</div>
