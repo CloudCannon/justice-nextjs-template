@@ -1,6 +1,8 @@
 import PageLayout from '../components/layouts/page';
 import StaffMember from '../components/staff-member';
-import { getCollection, getCollectionItem } from '../lib/collections';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function About({ page, staffMembers }) {
 	return (
@@ -17,8 +19,8 @@ export default function About({ page, staffMembers }) {
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('pages', 'about');
-	const staffMembers = await getCollection('staff-members');
+	const page = await filer.getItem('about.md', { folder: 'pages' });
+	const staffMembers = await filer.getItems('staff-members');
 
 	return {
 		props: {

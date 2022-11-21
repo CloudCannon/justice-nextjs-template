@@ -1,8 +1,10 @@
 import { writeFile } from 'fs/promises';
 import PageLayout from '../../components/layouts/page';
 import PostSummary from '../../components/post-summary';
-import { getCollection, getCollectionItem } from '../../lib/collections';
 import { generateRss } from '../../lib/rss';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function Blog({ page, posts }) {
 	return (
@@ -17,11 +19,15 @@ export default function Blog({ page, posts }) {
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('pages', 'blog');
-	const posts = await getCollection('posts', { excerpt: true, sortKey: 'date' });
+	const page = await filer.getItem('blog.md', { folder: 'pages' });
+	const posts = await filer.getItems('posts', { excerpt: true, sortKey: 'date' });
+
 	const postsWithAuthor = await Promise.all(posts.map(async (post) => {
-		const author = await getCollectionItem('staff-members', post.author_staff_member);
-		return { ...post, author }
+		const author = await filer.getItem(`${post.data.author_staff_member}.md`, {
+			folder: 'staff-members'
+		});
+
+		return { ...post, author };
 	}));
 
 	await writeFile('./public/feed.xml', generateRss(postsWithAuthor));

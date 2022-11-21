@@ -1,5 +1,7 @@
 import PostLayout from '../../components/layouts/post';
-import { getCollectionSlugs, getCollectionItem } from '../../lib/collections';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function Post({ page, author }) {
 	return (
@@ -8,15 +10,17 @@ export default function Post({ page, author }) {
 }
 
 export async function getStaticPaths() {
+	const slugs = await filer.listItemSlugs('posts');
+
 	return {
-		paths: await getCollectionSlugs('posts'),
+		paths: slugs.map((slug) => ({ params: { slug } })),
 		fallback: false
 	};
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('posts', params.slug);
-	const author = await getCollectionItem('staff-members', page.author_staff_member);
+	const page = await filer.getItem(`${params.slug}.md`, { folder: 'posts' });
+	const author = await filer.getItem(`${page.data.author_staff_member}.md`, { folder: 'staff-members' });
 
 	return {
 		props: {

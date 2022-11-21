@@ -1,5 +1,7 @@
 import PageLayout from '../components/layouts/page';
-import { getCollectionSlugs, getCollectionItem } from '../lib/collections';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function Page({ page }) {
 	return (
@@ -8,7 +10,7 @@ export default function Page({ page }) {
 }
 
 export async function getStaticPaths() {
-	const slugs = await getCollectionSlugs('pages');
+	const slugs = await filer.listItemSlugs('pages');
 	const ignored = {
 		about: true,
 		blog: true,
@@ -17,13 +19,13 @@ export async function getStaticPaths() {
 	};
 
 	return {
-		paths: slugs.filter(({ params }) => !ignored[params.slug]),
+		paths: slugs.filter((slug) => !ignored[slug]).map((slug) => ({ params: { slug } })),
 		fallback: false
 	};
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('pages', params.slug);
+	const page = await filer.getItem(`${params.slug}.md`, { folder: 'pages' });
 
 	return {
 		props: {

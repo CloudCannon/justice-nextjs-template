@@ -9,7 +9,7 @@ export default function PostLayout({ children, page, author }) {
 	return (
 		<DefaultLayout page={page}>
 			<div className="page-header">
-				<h2>{page.title}</h2>
+				<h2>{page.data.title}</h2>
 			</div>
 
 			<article className="content">
@@ -30,7 +30,7 @@ export default function PostLayout({ children, page, author }) {
 							config={{
 								url: `${data.site.url}/blog/${page.slug}`.replace(/\/+/g, '/'),
 								identifier: page.slug,
-								title: page.title
+								title: page.data.title
 							}} />
 					</>
 				)}

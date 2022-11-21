@@ -5,8 +5,8 @@ import data from '../../lib/data';
 import Icon from '../../components/icon';
 
 export default function DefaultLayout({ children, page }) {
-	const title = page.title ? `${page.title} | ${data.seo.site_title}` : data.seo.site_title;
-	const description = page.description || data.seo.description;
+	const title = page.data.title ? `${page.data.title} | ${data.seo.site_title}` : data.seo.site_title;
+	const description = page.data.description || data.seo.description;
 
 	return (
 		<>
@@ -36,7 +36,7 @@ export default function DefaultLayout({ children, page }) {
 				}}
 			/>
 
-			<header style={{backgroundImage:'url(/uploads/building.jpg)'}} className={page.large_header ? 'main-hero' : ''}>
+			<header style={{backgroundImage:'url(/uploads/building.jpg)'}} className={page.data.large_header ? 'main-hero' : ''}>
 				<div className="container">
 					<h1><Link href="/">{data.company.company_name}</Link></h1>
 					<nav>
@@ -70,7 +70,7 @@ export default function DefaultLayout({ children, page }) {
 				<div className="container">{children}</div>
 			</section>
 
-			{page.call_to_action === 'Contact' && (
+			{page.data.call_to_action === 'Contact' && (
 				<section className="quote-section">
 					<p className="container">
 						<Link href="/contact">Contact us</Link> today to find out how we can help you. Your first consultation is free.
@@ -78,7 +78,7 @@ export default function DefaultLayout({ children, page }) {
 				</section>
 			)}
 
-			{page.call_to_action === 'Blog' && (
+			{page.data.call_to_action === 'Blog' && (
 				<section className="quote-section">
 					<p className="container">
 						<Link href="/blog">Read our blog</Link> for an introduction and quick tips on various areas of the law.

@@ -1,6 +1,8 @@
 import PageLayout from '../components/layouts/page';
 import data from '../lib/data';
-import { getCollectionSlugs, getCollectionItem } from '../lib/collections';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function Contact({ page }) {
 	return (
@@ -53,7 +55,7 @@ export default function Contact({ page }) {
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('pages', 'contact');
+	const page = await filer.getItem('contact.md', { folder: 'pages' });
 
 	return {
 		props: {

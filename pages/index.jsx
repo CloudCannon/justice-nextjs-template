@@ -1,11 +1,13 @@
 import PageLayout from '../components/layouts/page';
-import { getCollectionItem } from '../lib/collections';
+import Filer from '@cloudcannon/filer';
+
+const filer = new Filer({ path: 'content' });
 
 export default function Home({ page }) {
 	return (
 		<PageLayout page={page}>
 			<div className="testimonials">
-				{page.testimonials.map((testimonial, i) => (
+				{page.data.testimonials.map((testimonial, i) => (
 					<blockquote className="testimonial" key={i}>
 						<p className="testimonial-message">{testimonial.message}</p>
 						<p className="testimonial-author">
@@ -19,7 +21,7 @@ export default function Home({ page }) {
 }
 
 export async function getStaticProps({ params }) {
-	const page = await getCollectionItem('pages', 'index');
+	const page = await filer.getItem('index.md', { folder: 'pages' });
 
 	return {
 		props: {
