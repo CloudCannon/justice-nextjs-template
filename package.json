@@ -9,20 +9,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@cloudcannon/react-connector": "^1.0.6",
-    "disqus-react": "^1.1.2",
+    "@cloudcannon/filer": "^0.0.1",
+    "@cloudcannon/react-connector": "^1.0.8",
+    "disqus-react": "^1.1.5",
     "gray-matter": "^4.0.2",
-    "markdown-it": "^12.2.0",
+    "markdown-it": "^13.0.1",
     "next": "^11.0.0",
     "next-seo": "^4.26.0",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
     "next-sitemap": "^1.6.168",
-    "sass": "^1.39.0"
+    "sass": "^1.56.1"
   }
 }
