@@ -14,7 +14,7 @@ export default function PostLayout({ children, page, author }) {
 
 			<article className="content">
 				<PostSummaryDetails post={page} />
-				<div dangerouslySetInnerHTML={{ __html: page.content_html }} />
+				<div dangerouslySetInnerHTML={{ __html: page.data.content_html }} />
 
 				<h2>Meet the author</h2>
 				<ul className="post-author staff-list">

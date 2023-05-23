@@ -5,20 +5,20 @@
   "scripts": {
     "dev": "next dev -p 3333",
     "lint": "next lint",
-    "build": "next build && next-sitemap && next export",
+    "build": "next build && next-sitemap",
     "start": "next start"
   },
   "dependencies": {
     "@cloudcannon/filer": "^0.0.1",
-    "@cloudcannon/react-connector": "^1.0.8",
+    "@cloudcannon/react-connector": "^2.0.0",
     "disqus-react": "^1.1.5",
     "gray-matter": "^4.0.2",
     "markdown-it": "^13.0.1",
-    "next": "^13.0.4",
+    "next": "^13.4.2",
     "next-seo": "^5.14.1",
-    "prop-types": "^15.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "prop-types": "^15.8.1"
   },
   "devDependencies": {
     "eslint": "8.28.0",
